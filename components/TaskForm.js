@@ -4,6 +4,7 @@ import { TaskListContext } from '../context/TaskListContext';
 const TaskForm = () => {
     const { addTask, clearList, editItem, editTask } = useContext(TaskListContext);
     const [title, setTitle] = useState('');
+    console.log('TaskForm');
 
     const handleChange = (e) => {
         setTitle(e.target.value);
@@ -31,7 +32,7 @@ const TaskForm = () => {
     }, [editItem])
 
     return (
-        <div>
+        <div data-test='TaskFormComponent'>
             <form className='form'>
                 <input
                     required

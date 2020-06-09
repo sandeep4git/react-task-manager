@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faTrash, faEdit, faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import '../lib/fontawesome';
 
-const Task = ({ task }) => {
+const Task = (task) => {
     const { removeTask, findItem } = useContext(TaskListContext);
+    console.log('Task');
+    console.log(task);
     return (
-        <div>
+        <div data-test='TaskComponent'>
             <li className='list-item'>
-                <span>{task.title}</span>
+                <span>{task.task.title}</span>
                 <span>
                     <span className='btn-delete'>
                         <FontAwesomeIcon
